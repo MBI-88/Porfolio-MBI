@@ -4,6 +4,7 @@ import About from "./core/modules/AboutMe/About";
 import Index from "./core/modules/Index/Index";
 import Projects from "./core/modules/Projects/Projects";
 import 'bootstrap/dist/css/bootstrap.min.css'
+import './App.css'
 
 
 const App = () => (

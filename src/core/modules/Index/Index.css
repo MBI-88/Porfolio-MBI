@@ -1,0 +1,14 @@
+.index-apper {
+    opacity: 1;
+    animation: apper 1s ease-in 1.5s ;
+}
+
+@keyframes apper {
+    from{
+        opacity: 1;
+    }
+
+    to{
+        opacity: 0;
+    }
+}

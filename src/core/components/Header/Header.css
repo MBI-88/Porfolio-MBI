@@ -8,6 +8,6 @@
     .header-background-nav {
         background: #2c1338;
         width: fit-content;
-        height: 100vh;
+        height: 100%;
     }
 }

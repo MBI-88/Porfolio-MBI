@@ -1,0 +1,13 @@
+.header-background-nav {
+    background: #2c1338;
+    width: 100%;
+
+}
+
+@media screen and (min-width: 490px) {
+    .header-background-nav {
+        background: #2c1338;
+        width: fit-content;
+        height: 100vh;
+    }
+}

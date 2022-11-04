@@ -1,14 +1,23 @@
-.index-apper {
-    opacity: 1;
-    animation: apper 1s ease-in 1.5s ;
+
+.display-hidden {
+    display: none;
 }
 
-@keyframes apper {
-    from{
-        opacity: 1;
-    }
+.index-appear {
+    animation: appear 1s ease-in;
+}
 
-    to{
+@keyframes appear {
+    0% {
         opacity: 0;
     }
+    
+    100% {
+        opacity: 1;
+    }
+    
+}
+
+.bg-header-cv {
+    background-color: #0a65b4;
 }

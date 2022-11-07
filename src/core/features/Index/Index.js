@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { Loader } from "../../shared/Loading/Loading";
-import Body from "./components/Body";
+import { Loader } from "../../../shared/Loading/Loading";
+import Body from "./components/Body/Body";
 import './Index.css';
 
 
@@ -11,13 +11,13 @@ const Index = () => {
 
     }, 1000)
     return (
-        <>
+        <section>
             {loading ?
                 <div className="container-fluid text-center pt-5">
                     <Loader />
                 </div>
                 : (
-                    <div className={loading ? "display-hidden": "container-fluid text-center ps-lg-5 mt-lg-3 pt-sm-1 pt-md-1 mb-lg-3 pe-lg-5 rounded-5 index-appear"}>
+                    <article className={loading ? "display-hidden" : "container-fluid text-center ps-lg-5 mt-lg-3 pt-sm-1 pt-md-1 mb-lg-3 pe-lg-5 rounded-5 index-appear"}>
                         <div className="card text-start shadow ">
                             <div className="container-fluid d-lg-flex d-md-block d-sm-block p-3 bg-header-cv">
                                 <div className="p-2">
@@ -29,9 +29,9 @@ const Index = () => {
                                 <Body />
                             </div>
                         </div>
-                    </div>
+                    </article>
                 )}
-        </>
+        </section>
 
     );
 };

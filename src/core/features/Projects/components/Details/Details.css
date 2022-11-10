@@ -1,0 +1,18 @@
+.display-hidden {
+    display: none;
+}
+
+.project-appear {
+    animation: appear 1s ease-in;
+}
+
+@keyframes appear {
+    0% {
+        opacity: 0;
+    }
+    
+    100% {
+        opacity: 1;
+    }
+    
+}

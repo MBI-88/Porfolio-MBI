@@ -5,6 +5,7 @@ import Index from "./core/features/Index/Index";
 import Projects from "./core/features/Projects/Projects";
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './App.css'
+import Details from "./core/features/Projects/components/Details/Details";
 
 
 const App = () => (
@@ -15,6 +16,7 @@ const App = () => (
         <Route path="/" element={<Index />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/about" element={<About />} />
+        <Route path="/project-details/:repo" element={<Details />} />
       </Routes>
     </BrowserRouter>
   </main>

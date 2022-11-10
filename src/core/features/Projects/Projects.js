@@ -5,7 +5,7 @@ import Body from "./components/Body/Body";
 
 
 const apiUrl = process.env.REACT_APP_API_URL
-const name = process.env.REACT_APP_NAME
+const userName = process.env.REACT_APP_NAME
 
 const custumeState = (states, action) => {
     switch (action.type) {
@@ -13,9 +13,9 @@ const custumeState = (states, action) => {
             return {
                 ...states, loading: true, error: false
             }
-        case 'FECHING':
+        case 'FETCHING':
             return {
-                ...states, loading: false, error: false, data: payload
+                ...states, loading: false, error: false, data: action.payload
             }
         case 'ERROR':
             return {
@@ -34,25 +34,28 @@ const Projects = () => {
 
     useEffect(() => {
         setState({ type: 'LOADING' })
-        const getData = GetApi(apiUrl + `/${name}/repos`)
-        getData.then(response => {
-            setState({ type: 'FECHING', payload: response.json() })
-        }).catch(() => {
+        GetApi(apiUrl + `/${userName}/repos`)
+        .then(response => response.json())
+        .then(result => {
+            setState({type: 'FETCHING', payload: result})
+        })
+        .catch(() => {
             setState({ type: 'ERROR' })
         })
-    }, [])
+    },)
 
     return (
-        <section>
+        <section className="container-fluid">
             {
                 state.loading ?
-                    <div className="container-fluid text-center pt-5">
+                    <div className="text-center pt-5">
                         <Loader />
                     </div> : state.Error ? <div className="container text-center pt-5 bg-danger">
                         <h3 className=" h3 fw-bold pt-3">Connection error</h3>
                     </div> :
                         (
-                            <Body data={state.payload} loading={state.loading} />
+                           <Body data={state.data} loading={state.loading} />
+                          
                         )
             }
         </section>

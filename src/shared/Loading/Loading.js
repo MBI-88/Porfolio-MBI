@@ -3,24 +3,23 @@ import './Loading.css'
 
 // Component
 
-const Loader = () => {
+const Loader = () => (
+    <div className="lds-spinner loading">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+)
 
-    return (
-        <div className="lds-spinner loading">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-    )
-}
+
 
 export { Loader }

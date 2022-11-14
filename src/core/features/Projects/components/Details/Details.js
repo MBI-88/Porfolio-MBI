@@ -16,7 +16,7 @@ const custumeState = (states, action) => {
             }
         case 'FETCHING':
             return {
-                ...states, loading: false, error: false, data: action.payload
+                ...states, loading: false, error: false
             }
         case 'ERROR':
             return {
@@ -27,7 +27,7 @@ const custumeState = (states, action) => {
     }
 
 }
-const optionalImage = '../assets/image-porfolio.jpg'
+
 const apiUrl = process.env.REACT_APP_API_REPO
 const userName = process.env.REACT_APP_NAME
 const colors = [
@@ -67,19 +67,19 @@ const test = {
 
 const Details = () => {
     const [state, setState] = useReducer(custumeState, {
-        data: {}, loading: true, error: false
+        loading: true, error: false
     })
     const [chart, setChart] = useState(data)
-    const handlerChart = () => {
-        if (state.data !== null) {
-            const colorCount = Object.keys(state.data).length
+    const handlerChart = (info) => {
+        if (info !== null) {
+            const colorCount = Object.keys(info).length
             setChart(
                 {
-                    labels: Object.keys(state.data),
+                    labels: Object.keys(info),
                     datasets: [
                         {
                             label: 'Values',
-                            data: Object.values(state.data),
+                            data: Object.values(info),
                             backgroundColor: colors.slice(0, colorCount),
                             borderColor: colors.slice(0, colorCount),
                             borderWidth: 1,
@@ -95,23 +95,20 @@ const Details = () => {
 
     useEffect(() => {
         setState({ type: 'LOADING' })
-        //GetApi(apiUrl + `${userName}/${repo.name}/languages`)
-        //  .then(response => response.json())
-        // .then(result => {
-        //   setState({ type: 'FETCHING', payload: result })
-        // handlerChart()
-        // })
+        //GetApi(apiUrl + `${userName}/${repo.state.name}/languages`)
+        //.then(response => response.json())
+        //.then(result => {
+        //  handlerChart(result)
+        //  setState({ type: 'FETCHING'})
+
+        //})
         //.catch(() => {
         //  setState({ type: 'ERROR' })
         //})
-        setState({
-            type: 'FETCHING',
-            payload: test
-        })
-        handlerChart()
+        handlerChart(test)
+        setState({ type: 'FETCHING' })
     }, [])
 
-    console.log(repo.state.private)
     return (
         <section className="container-fluid">
             {
@@ -123,30 +120,27 @@ const Details = () => {
                     </div> :
                         (
                             <article className={state.loading ? "display-hidden" : "container-fluid project-appear"}>
-                                <section className=" d-lg-flex d-md-block d-sm-block g-5 ps-lg-5 mt-lg-3 p-0  mt-5 mb-2 pe-lg-5">
-                                    <div className="card">
-                                        <img src={optionalImage} className="card-img-top img-fluid" alt="" />
+                                <section className="container mt-5 mb-2">
+                                    <div className="card shadow">
+                                        <div className="container-fluid w-50 h-50">
+                                             <Pie data={chart} />
+                                        </div>
                                         <div className="card-body">
                                             <h5 className="card-title">{repo.state.name}</h5>
                                             <p className="card-text">
-                                                Private: {repo.state.private ? <strong>Yes</strong>: <strong>No</strong>} <br />
-                                                Description: {repo.state.description} <br />
+                                                Private: {repo.state.private ? <strong>Yes</strong> : <strong>No</strong>} <br />
+                                                Description: {repo.state.description ? repo.state.description : "..."} <br />
                                                 Created at: {repo.state.created_at} <br />
                                                 Updated at: {repo.state.updated_at} <br />
-                                                Clone url: <a href={repo.state.clone_url}><strong>{repo.state.name}</strong></a><br/>
+                                                Clone url: <a href={repo.state.clone_url}><strong>{repo.state.name}</strong></a><br />
                                                 Size: {repo.state.size} Kb <br />
-                                                Languages: {repo.state.language} <br/>
+                                                Languages: {repo.state.language} <br />
                                                 Visibility: {repo.state.visibility} <br />
                                             </p>
                                         </div>
                                     </div>
-
-                                    <div className="container text-center ">
-                                        <Pie data={chart} />
-                                    </div>
                                 </section>
                                 <div className="space">
-
                                 </div>
                             </article>
                         )

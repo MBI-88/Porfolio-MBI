@@ -108,7 +108,7 @@ const About = () => {
                                     <div className='card-body text-start'>
                                         <h4 className='card-title fw-bolder'>Location</h4>
                                         <p className='card-text'>
-                                            <a href='https://www.google.com/maps/d/viewer?mid=12nNOk7khhSzJ_f-y-HqERVY1R5M&hl=es&ll=27.9392422370202%2C-110.93391846459834&z=19'>
+                                            <a href='https://www.google.com/maps/d/viewer?mid=1r3VtIGnbAeoSO5XL7Q5wdgYZ3wM&hl=en_US&ll=-34.88753697329169%2C-56.183469724385006&z=20'>
                                                 <h4> <BiCurrentLocation data-tip data-for="location"/> </h4>
                                             </a>
                                             <ReactTooltip id="location" place='right' effect='solid' className='info'>

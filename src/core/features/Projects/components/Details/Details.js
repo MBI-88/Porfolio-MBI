@@ -56,15 +56,6 @@ const data = {
     ]
 }
 
-const test = {
-    Python: 109654,
-    HTML: 76360,
-    JavaScript: 8012,
-    CSS: 4754,
-    Shell: 1331,
-    Procfile: 39
-}
-
 const Details = () => {
     const [state, setState] = useReducer(custumeState, {
         loading: true, error: false
@@ -95,19 +86,16 @@ const Details = () => {
 
     useEffect(() => {
         setState({ type: 'LOADING' })
-        //GetApi(apiUrl + `${userName}/${repo.state.name}/languages`)
-        //.then(response => response.json())
-        //.then(result => {
-        //  handlerChart(result)
-        //  setState({ type: 'FETCHING'})
-
-        //})
-        //.catch(() => {
-        //  setState({ type: 'ERROR' })
-        //})
-        handlerChart(test)
-        setState({ type: 'FETCHING' })
-    }, [])
+        GetApi(apiUrl + `${userName}/${repo.state.name}/languages`)
+        .then(response => response.json())
+        .then(result => {
+          handlerChart(result)
+          setState({ type: 'FETCHING'})
+        })
+        .catch(() => {
+          setState({ type: 'ERROR' })
+        })
+    },[] )
 
     return (
         <section className="container-fluid">

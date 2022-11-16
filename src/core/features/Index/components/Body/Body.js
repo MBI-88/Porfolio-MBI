@@ -48,7 +48,7 @@ const Body = () => {
             <section id="Experience">
                 <article id="1" className=" mb-3">
                     <h4 className="card-title fw-bolder">Experience</h4>
-                    <h5 className='text-subtitle'>SOFTAWER DEVELOPER PYTHON/DJANGO</h5>
+                    <h5 className='text-subtitle'>SOFTWARE DEVELOPER PYTHON/DJANGO</h5>
                     <h6>AUTONOMOUS  JAN 2017 – PRESENT</h6>
                     <p className="card-text">
                         Application for image processing.<br />

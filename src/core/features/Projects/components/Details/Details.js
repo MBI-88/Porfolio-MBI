@@ -95,7 +95,7 @@ const Details = () => {
         .catch(() => {
           setState({ type: 'ERROR' })
         })
-    },[] )
+    },[repo.state.name])
 
     return (
         <section className="container-fluid">

@@ -1,4 +1,8 @@
-.text-subtitle {
-    font-weight: 600;
+.text-color {
+    color: #f4d003fb;
 }
 
+.background-main {
+    background-color:#000000 !important;
+    height: 240em;
+}

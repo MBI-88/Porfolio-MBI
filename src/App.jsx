@@ -5,21 +5,27 @@ import Index from "./core/features/Index/Index";
 import Projects from "./core/features/Projects/Projects";
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './App.css'
-import Details from "./core/features/Projects/components/Details/Details";
+//import Details from "./core/features/Projects/components/Details/Details";
 
 
 const App = () => (
-  <main>
-    <BrowserRouter>
-      <Header />
+
+
+  <BrowserRouter>
+    <Header />
+    <main className="route">
       <Routes>
         <Route path="/" element={<Index />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/about" element={<About />} />
-        <Route path="/project-details/"  element={<Details />} />
+        {/*
+          <Route path="/project-details/"  element={<Details />} />
+         */}
       </Routes>
-    </BrowserRouter>
-  </main>
+    </main>
+
+  </BrowserRouter>
+
 
 )
 

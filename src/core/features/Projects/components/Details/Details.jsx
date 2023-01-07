@@ -1,10 +1,11 @@
 import { useEffect, useReducer, useState } from "react";
-import { useLocation } from "react-router-dom";
+//import { useLocation } from "react-router-dom";
 import { Loader } from "../../../../../shared/Loading/Loading";
 import './Details.css'
 import { GetApi } from "../../../../services/Helpers";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
-import { Pie } from 'react-chartjs-2';
+import { Pie } from "react-chartjs-2";
+import { motion } from "framer-motion";
 
 
 
@@ -56,7 +57,7 @@ const data = {
     ]
 }
 
-const Details = () => {
+const Details = ({ dataItem }) => {
     const [state, setState] = useReducer(custumeState, {
         loading: true, error: false
     })
@@ -81,24 +82,31 @@ const Details = () => {
             )
         }
     }
-    const repo = useLocation()
+    //const repo = useLocation()
     ChartJS.register(ArcElement, Tooltip, Legend);
 
     useEffect(() => {
         setState({ type: 'LOADING' })
-        GetApi(apiUrl + `${userName}/${repo.state.name}/languages`)
-        .then(response => response.json())
-        .then(result => {
-          handlerChart(result)
-          setState({ type: 'FETCHING'})
-        })
-        .catch(() => {
-          setState({ type: 'ERROR' })
-        })
-    },[repo.state.name])
+        GetApi(apiUrl + `${userName}/${dataItem.name}/languages`)
+            .then(response => response.json())
+            .then(result => {
+                handlerChart(result)
+                setState({ type: 'FETCHING' })
+            })
+            .catch(() => {
+                setState({ type: 'ERROR' })
+            })
+    }, [dataItem.name])
 
     return (
-        <section className="container-fluid">
+        <motion.section
+            className="container-fluid"
+            whileHover={{
+                scale: [null, 1.4],
+                
+            }}
+            transition={{duration: 0.9}}
+        >
             {
                 state.loading ?
                     <div className="text-center pt-5">
@@ -111,29 +119,28 @@ const Details = () => {
                                 <section className="container mt-5 mb-2">
                                     <div className="card shadow">
                                         <div className="container-fluid w-50 h-50">
-                                             <Pie data={chart} />
+                                            <Pie data={chart} />
                                         </div>
                                         <div className="card-body">
-                                            <h5 className="card-title">{repo.state.name}</h5>
+                                            <h5 className="card-title">{dataItem.name}</h5>
                                             <p className="card-text">
-                                                Private: {repo.state.private ? <strong>Yes</strong> : <strong>No</strong>} <br />
-                                                Description: {repo.state.description ? repo.state.description : "..."} <br />
-                                                Created at: {repo.state.created_at} <br />
-                                                Updated at: {repo.state.updated_at} <br />
-                                                Clone url: <a href={repo.state.clone_url}><strong>{repo.state.name}</strong></a><br />
-                                                Size: {repo.state.size} Kb <br />
-                                                Languages: {repo.state.language} <br />
-                                                Visibility: {repo.state.visibility} <br />
+                                                Private: {dataItem.private ? <strong>Yes</strong> : <strong>No</strong>} <br />
+                                                Description: {dataItem.description ? dataItem.description : "..."} <br />
+                                                Created at: {dataItem.created_at} <br />
+                                                Updated at: {dataItem.updated_at} <br />
+                                                Clone url: <a href={dataItem.clone_url}><strong>{dataItem.name}</strong></a><br />
+                                                Size: {dataItem.size} Kb <br />
+                                                Languages: {dataItem.language} <br />
+                                                Visibility: {dataItem.visibility} <br />
                                             </p>
                                         </div>
                                     </div>
                                 </section>
-                                <div className="space">
-                                </div>
+
                             </article>
                         )
             }
-        </section>
+        </motion.section>
     );
 };
 

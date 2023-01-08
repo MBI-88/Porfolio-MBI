@@ -1,13 +1,13 @@
 import './Body.css'
 import { motion } from 'framer-motion'
 import { HiOutlineDownload } from 'react-icons/hi'
-import { 
-    IoLogoJavascript, IoLogoPython, IoLogoHtml5, 
-    IoLogoCss3, IoLogoSass, IoLogoAngular 
+import {
+    IoLogoJavascript, IoLogoPython, IoLogoHtml5,
+    IoLogoCss3, IoLogoSass, IoLogoAngular
 } from 'react-icons/io'
-import { 
-    SiTypescript, SiTensorflow, SiMysql, 
-    SiPostgresql, SiMongodb, SiDocker 
+import {
+    SiTypescript, SiTensorflow, SiMysql,
+    SiPostgresql, SiMongodb, SiDocker
 } from 'react-icons/si'
 import { SiDjango, SiFlask, SiFastapi, SiOwasp, SiGoland } from 'react-icons/si'
 import { FaBootstrap, FaLinux, FaWindows, FaReact } from 'react-icons/fa'
@@ -19,7 +19,7 @@ const Body = () => {
         show: {
             opacity: 1,
             transition: {
-                delayChildren: 2
+                delayChildren: 6
             }
         }
     }
@@ -32,7 +32,7 @@ const Body = () => {
         show: {
             opacity: 1,
             y: 0,
-            transition: { duration: 1.5, delay:1}
+            transition: { duration: 1.5, delay: 3 }
         }
     }
     const item2 = {
@@ -43,7 +43,7 @@ const Body = () => {
         show: {
             opacity: 1,
             y: 0,
-            transition: { duration: 1.5, delay: 2 }
+            transition: { duration: 1.5, delay: 4 }
         }
     }
     const item3 = {
@@ -54,7 +54,7 @@ const Body = () => {
         show: {
             opacity: 1,
             y: 0,
-            transition: { duration: 1.5, delay: 3 }
+            transition: { duration: 1.5, delay: 5 }
         }
     }
     const item4 = {
@@ -65,7 +65,7 @@ const Body = () => {
         show: {
             opacity: 1,
             y: 0,
-            transition: { duration: 1.5, delay: 4 }
+            transition: { duration: 1.5, delay: 6 }
         }
     }
     const item5 = {
@@ -76,7 +76,7 @@ const Body = () => {
         show: {
             opacity: 1,
             y: 0,
-            transition: { duration: 1.5, delay: 5 }
+            transition: { duration: 1.5, delay: 7 }
         }
     }
     const item6 = {
@@ -87,7 +87,7 @@ const Body = () => {
         show: {
             opacity: 1,
             y: 0,
-            transition: { duration: 1.5, delay: 6 }
+            transition: { duration: 1.5, delay: 8 }
         }
     }
     const item7 = {
@@ -98,12 +98,12 @@ const Body = () => {
         show: {
             opacity: 1,
             y: 0,
-            transition: { duration: 1.5, delay: 7 }
+            transition: { duration: 1.5, delay: 9 }
         }
     }
 
     return (
-        <section className='background-main'>
+        <section>
             <section>
                 <motion.div id='Review'
                     className="container pt-5"
@@ -126,35 +126,35 @@ const Body = () => {
                     </motion.h1>
                     <div className='text-start p-3 mt-5'>
                         <h3 className='fs-3 text-color'>
-                            I'm a Telecommunications and electronics engineer.
-                            I'm a fan of technologies and internet. When I learned programming in my career,
-                            I never stopped practicing again. Of all the aspects that my career offers me, I chose programming.
-                            I started with small applications in C++, since it was the first language I learned, in this
+                            I'm a Telecommunications and Electronics engineer.
+                            I'm a fan of technologies and the internet. When I learned how to programme,
+                            I never stopped doing it. Of all the aspects that my career offers me, I chose programming.
+                            I started with small applications using C++, since it was the first language I learned. Then,
                             I made small console applications to manage user registries and small databases.
                             But I decided that C++ was not the language I identified with,
-                            it was too expensive in time to develop. As far as C# where
-                            I felt more comfortable and was able to make larger scale applications with graphical interfaces,
-                            one of them was a tool for the Telecommunications Fundamentals course where you could measure bandwidth
+                            it took too long to be developed. As far as C# concerns,
+                            I was more comfortable using it and I was able to make larger scale applications with graphical interfaces,
+                            one of them was a tool for a Telecommunications Fundamentals course where you could measure bandwidth
                             and bit rate among other variables.
-                            Then I found Python and with it I found many facilities to develop in different branches of programming.
-                            Python was everything I was looking for, after a time of experience where I reproduced several applications
-                            that I had already done before and others in the field of cybersecurity, where it has a great domain. I worked
+                            Then I found Python and with it offered a lot of advantages for different branches of programming.
+                            Python was everything I was looking for. After a time of experience, I reproduced several applications
+                            that I had already done before and others in the field of Cybersecurity, where it has great domain. I worked
                             with artificial intelligence and data science, in web development with frameworks like Django, Flask and FastApi,
                             also in the development of desktop applications with the PyQT5 and PySide framework. Certainly, Python is an all-rounder.
-                            Also at the same time that I was working with this technology,
-                            I was also programming relational databases such as MySQL, PostgresSQL and non-relational databases such as MongoDb.
+                            Also, while working with this technology,
+                            I was programming relational databases such as MySQL, PostgresSQL and non-relational databases such as MongoDb.
                             I had to learn JavaScript, HTML5 and CSS5 as part of web development, since Django did not provide me with all the necessary
                             tools for a good graphic design.
-                            And with this came React and Angular, the first is where
-                            I have deepened more because it is my main front end tool.
-                            I have a continuous improvements of my skills and I often look for information about new technologies.
+                            As a result, I got acquainted with React and Angular. 
+                            I have worked with React more because it is my main front-end tool.
+                            Currently, I have continuous improvement of my skills and I often look for information about new technologies.
 
                         </h3>
                     </div>
                 </motion.div>
             </section>
             <section>
-                <div id='Main'className='container pt-5'>
+                <div id='Main' className='container pt-5'>
                     <motion.h1 className='fs-1 text-start'
                         animate={{ color: ['#40e612', '#7a19db9e', '#d31a1ab0', '#2551e2fe'], animationTimingFunction: 'ease' }}
                         transition={{ duration: 10, repeat: Infinity, delay: 1 }}
@@ -162,7 +162,14 @@ const Body = () => {
                         Technologies
                     </motion.h1>
 
-                    <article className='d-lg-flex d-md-flex flex-row align-content-center p-3 mt-5'>
+                    <motion.article
+                        className='d-lg-flex d-md-flex flex-row align-content-center p-3 mt-5'
+                        initial={{ opacity: 0, y: 100 }}
+                        whileInView={{
+                            opacity: 1, y: 0, transition: { duration: 1 }
+                        }}
+                        viewport={{ once: true }}
+                    >
                         <div className='container-fluid text-center'>
                             <motion.ul variants={container} initial="hidden" animate="show" className='text-center'>
                                 <motion.li variants={item1} className="nav nav-item">
@@ -283,14 +290,14 @@ const Body = () => {
                                 </motion.li>
                             </motion.ul>
                         </div>
-                    </article>
+                    </motion.article>
                 </div>
-                <motion.a 
-                    href='/assets/CV-MBI-EN.pdf' 
+                <motion.a
+                    href='/assets/CV-MBI-EN.pdf'
                     className='container nav nav-link'
-                    initial={{opacity: 0, x: -100}}
-                    whileInView={{opacity: 1, x: 0}}
-                    viewport={{once: true}}
+                    initial={{ opacity: 0, x: -100 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
                 >
                     <motion.h3
                         className='fs-4 fw-bold text-start'

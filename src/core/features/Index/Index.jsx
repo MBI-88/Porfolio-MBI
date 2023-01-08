@@ -85,59 +85,59 @@ const Index = () => {
 
 
     return (
-        <div className='layout position-relative'>
-            <section className='index-background'>
-                <div className='container d-lg-flex flex-row align-content-center'>
-                    <motion.img
-                        initial={{ scale: 1.8 }}
-                        animate={{ scale: 1 }}
-                        transition={{ duration: 1.2 }}
-                        src="/assets/Porfolio_MBI2.png"
-                        className="img-fluid ps-lg-5 rounded-pill"
-                    />
-                    <div className='mt-lg-5 pt-lg-2'>
-                        <motion.ul variants={container} initial="hidden" animate="show" className='text-start pt-5 ps-lg-5 mt-lg-5'>
-                            <motion.li className='nav nav-item text-start' variants={item1}>
-                                <h3 className='fs-1 fw-bold text-color'>
-                                    Hi, my name is Michael
-                                </h3>
-                            </motion.li>
-                            <motion.li className='nav nav-item text-start' variants={item2}>
-                                <h3 className='fs-1 fw-bold text-color'>
-                                    I'm a software developer
-                                </h3>
-                            </motion.li>
-                            <motion.li className='nav nav-item text-start'>
+        <section>
+            <div className='container d-lg-flex flex-row align-content-center'>
+                <motion.img
+                    initial={{ scale: 1.8 }}
+                    animate={{ scale: 1 }}
+                    transition={{ duration: 1.2 }}
+                    src="/assets/Porfolio_MBI2.png"
+                    className="img-fluid ps-lg-5 rounded-pill"
+                />
+                <div className='mt-lg-5 pt-lg-2'>
+                    <motion.ul variants={container} initial="hidden" animate="show" className='text-start pt-5 ps-lg-5 mt-lg-5'>
+                        <motion.li className='nav nav-item text-start' variants={item1}>
+                            <h3 className='fs-1 fw-bold text-color'>
+                                Hi, my name is Michael
+                            </h3>
+                        </motion.li>
+                        <motion.li className='nav nav-item text-start' variants={item2}>
+                            <h3 className='fs-1 fw-bold text-color'>
+                                I'm a software developer
+                            </h3>
+                        </motion.li>
+                        <motion.li className='nav nav-item text-start'>
 
-                            </motion.li>
-                            <motion.li className='nav nav-item text-start' variants={item3}>
-                                <h3 className='fs-1 fw-bold text-color'>
-                                    and
-                                </h3>
-                            </motion.li>
-                            <motion.li className='nav nav-item text-start' variants={item4}>
-                                <h3 className='fs-1 fw-bold text-color'>
-                                    I love my job
-                                </h3>
-                            </motion.li>
-                            <motion.li className='nav nav-item text-start' variants={item5}>
-                                <h3 className='fs-1 fw-bold text-color'>
-                                    Efficiency and Productivity
-                                </h3>
-                            </motion.li>
-                            <motion.li className='nav nav-item text-start' variants={item6}>
-                                <h3 className='fs-1 fw-bold text-color'>
-                                    are my main skills
-                                </h3>
-                            </motion.li>
+                        </motion.li>
+                        <motion.li className='nav nav-item text-start' variants={item3}>
+                            <h3 className='fs-1 fw-bold text-color'>
+                                and
+                            </h3>
+                        </motion.li>
+                        <motion.li className='nav nav-item text-start' variants={item4}>
+                            <h3 className='fs-1 fw-bold text-color'>
+                                I love my job
+                            </h3>
+                        </motion.li>
+                        <motion.li className='nav nav-item text-start' variants={item5}>
+                            <h3 className='fs-1 fw-bold text-color'>
+                                Efficiency and Productivity
+                            </h3>
+                        </motion.li>
+                        <motion.li className='nav nav-item text-start' variants={item6}>
+                            <h3 className='fs-1 fw-bold text-color'>
+                                are my main skills
+                            </h3>
+                        </motion.li>
 
-                        </motion.ul>
-                    </div>
-
+                    </motion.ul>
                 </div>
-            </section>
+
+            </div>
             <Body />
-        </div>
+        </section>
+
+
 
 
     );

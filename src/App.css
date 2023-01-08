@@ -1,5 +1,5 @@
-.route {
-    height: 100vh;
-    display: block;
+.background {
+    background: black;
+    width: 100%;
     
 }

@@ -10,10 +10,10 @@ import './App.css'
 
 const App = () => (
 
+  <main className="background">
+    <BrowserRouter>
 
-  <BrowserRouter>
-    <Header />
-    <main className="route">
+      <Header />
       <Routes>
         <Route path="/" element={<Index />} />
         <Route path="/projects" element={<Projects />} />
@@ -22,10 +22,9 @@ const App = () => (
           <Route path="/project-details/"  element={<Details />} />
          */}
       </Routes>
-    </main>
 
-  </BrowserRouter>
-
+    </BrowserRouter>
+  </main>
 
 )
 

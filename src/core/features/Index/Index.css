@@ -1,12 +1,4 @@
-.index-background {
-    background-color: black;
-    height: 50em;
-}
-
 .text-color {
     color: #f1e106fb;
 }
 
-.layout {
-    z-index: -1;
-}

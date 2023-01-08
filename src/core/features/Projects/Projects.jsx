@@ -116,7 +116,7 @@ const Projects = () => {
     }, [])
 
     return (
-        <div className="layout position-relative background">
+        <div>
             <section>
                 <motion.div
                     className="d-lg-flex flex-row align-content-center"
@@ -182,10 +182,11 @@ const Projects = () => {
 
             </section>
 
-            <section>
+            <section className="mt-5">
+                <div className="space"></div>
                 {
                     state.loading ?
-                        <div className="text-center pt-5">
+                        <div className="text-center mt-5">
                             <Loader />
                         </div> : state.Error ? <div className="container text-center pt-5 bg-danger">
                             <h3 className=" h3 fw-bold pt-3">Connection error</h3>

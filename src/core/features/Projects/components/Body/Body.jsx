@@ -8,12 +8,24 @@ const Body = ({ data }) => {
 
     return (
         <motion.article
-            className='container-fluid mt-5'
+            className='container-fluid mt-5 p-4'
             initial={{ opacity: 0, y: 300 }}
-            whileInView={{opacity: 1, y: 0, transition: {duration: 1}}}
+            whileInView={{
+                opacity: 1, y: 0,
+                transition: { duration: 1 },
+            }}
             viewport={{ once: true }}
         >
-            <div className="row row-cols-lg-4 row-cols-1 ps-lg-5 mt-lg-3 mt-5 mb-2 pe-lg-5">
+            <motion.div
+                className="row row-cols-lg-4 row-cols-1 mt-2  rounded-5"
+                initial={{borderColor: 'ActiveBorder',borderWidth: 2, borderStyle: 'solid'}}
+                animate={{
+                    borderColor: ['#fc0505', '#fcf405', '#5ffc05', '#00f6ff','#fa00ff'],
+                    animationTimingFunction: 'ease-out'
+                }}
+                transition={{ duration: 0.5, repeat: Infinity }}
+
+            >
                 {
                     data.map(item =>
                     (
@@ -29,7 +41,7 @@ const Body = ({ data }) => {
                     )
                     )
                 }
-            </div>
+            </motion.div>
             {/*
                 <RouterLink to={`/project-details/`} state={item} className="btn btn-primary">
                     <motion.h4

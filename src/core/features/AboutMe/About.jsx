@@ -171,9 +171,9 @@ const About = () => {
                             whileHover={{ color: '#ea0a0a', scale: [null, 1.25] }}
                             transition={{ duration: 0.5 }}
                         >
-                            <BsWhatsapp data-tip data-for="Wahtsapp" />
+                            <BsWhatsapp data-tip data-for="WhatsApp" />
                         </motion.h2>
-                        <ReactTooltip id="whatsapp" place="top" effect="solid">
+                        <ReactTooltip id="WhatsApp" place="top" effect="solid">
                             WhatsApp
                         </ReactTooltip>
                     </motion.a>

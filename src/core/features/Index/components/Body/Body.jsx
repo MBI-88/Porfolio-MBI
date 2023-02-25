@@ -159,7 +159,7 @@ const Body = () => {
                         animate={{ color: ['#40e612', '#7a19db9e', '#d31a1ab0', '#2551e2fe'], animationTimingFunction: 'ease' }}
                         transition={{ duration: 10, repeat: Infinity, delay: 1 }}
                     >
-                        Technologies
+                        I have worked with these technologies
                     </motion.h1>
 
                     <motion.article
